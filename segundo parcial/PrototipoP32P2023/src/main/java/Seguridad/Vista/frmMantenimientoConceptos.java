@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class frmMantenimientoConceptos extends javax.swing.JInternalFrame {
     
-int codigoAplicacion=10;
+int codigoAplicacion=1001;
 
     public void llenadoDeCombos() {
         /*EmpleadoDAO empleadoDAO = new EmpleadoDAO();
