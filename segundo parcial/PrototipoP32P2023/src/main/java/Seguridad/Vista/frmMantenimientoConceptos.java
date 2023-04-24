@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author visitante
  */
-public class frmMantenimientoUsuario extends javax.swing.JInternalFrame {
+public class frmMantenimientoConceptos extends javax.swing.JInternalFrame {
     
 int codigoAplicacion=10;
 
@@ -66,7 +66,7 @@ int codigoAplicacion=10;
         }       
     }
 
-    public frmMantenimientoUsuario() {
+    public frmMantenimientoConceptos() {
         initComponents();
         llenadoDeTablas();
         llenadoDeCombos();

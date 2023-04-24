@@ -10,7 +10,7 @@ import Seguridad.Modelo.daoUsuario;
  *
  * @author visitante
  */
-public class clsUsuario {
+public class clsConceptos {
     private int IdUsuario;
     private String NombreUsuario;
     private String ContrasenaUsuario;
@@ -22,32 +22,32 @@ public class clsUsuario {
     private String DireccionUsuario;
     private int TipoUsuario;
 
-    public clsUsuario() {
+    public clsConceptos() {
     }
 
-    public clsUsuario(int IdUsuario) {
+    public clsConceptos(int IdUsuario) {
         this.IdUsuario = IdUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
         this.UltimaSesionUsuario = UltimaSesionUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
@@ -55,7 +55,7 @@ public class clsUsuario {
         this.EstatusUsuario = EstatusUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
@@ -64,7 +64,7 @@ public class clsUsuario {
         this.NombreRealUsuario = NombreRealUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
@@ -74,7 +74,7 @@ public class clsUsuario {
         this.CorreoUsuario = CorreoUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
@@ -85,7 +85,7 @@ public class clsUsuario {
         this.TelefonoUsuario = TelefonoUsuario;
     }
 
-    public clsUsuario(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario, String DireccionUsuario, int TipoUsuario) {
+    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario, String DireccionUsuario, int TipoUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.ContrasenaUsuario = ContrasenaUsuario;
@@ -183,33 +183,33 @@ public class clsUsuario {
         return "clsUsuario{" + "IdUsuario=" + IdUsuario + ", NombreUsuario=" + NombreUsuario + ", ContrasenaUsuario=" + ContrasenaUsuario + ", UltimaSesionUsuario=" + UltimaSesionUsuario + ", EstatusUsuario=" + EstatusUsuario + ", NombreRealUsuario=" + NombreRealUsuario + ", CorreoUsuario=" + CorreoUsuario + ", TelefonoUsuario=" + TelefonoUsuario + ", DireccionUsuario=" + DireccionUsuario + ", TipoUsuario=" + TipoUsuario +'}';
     }
     //Metodos de acceso a la capa controlador
-    public clsUsuario getBuscarInformacionUsuarioPorNombre(clsUsuario usuario)
+    public clsConceptos getBuscarInformacionUsuarioPorNombre(clsConceptos usuario)
     {
         daoUsuario daousuario = new daoUsuario();
         return daousuario.consultaUsuariosPorNombre(usuario);
     }
-    public clsUsuario getBuscarInformacionUsuarioPorId(clsUsuario usuario)
+    public clsConceptos getBuscarInformacionUsuarioPorId(clsConceptos usuario)
     {
         daoUsuario daousuario = new daoUsuario();
         return daousuario.consultaUsuariosPorId(usuario);
     }    
-    public List<clsUsuario> getListadoUsuarios()
+    public List<clsConceptos> getListadoUsuarios()
     {
         daoUsuario daousuario = new daoUsuario();
-        List<clsUsuario> listadoUsuarios = daousuario.consultaUsuarios();
+        List<clsConceptos> listadoUsuarios = daousuario.consultaUsuarios();
         return listadoUsuarios;
     }
-    public int setBorrarUsuario(clsUsuario usuario)
+    public int setBorrarUsuario(clsConceptos usuario)
     {
         daoUsuario daousuario = new daoUsuario();
         return daousuario.borrarUsuarios(usuario);
     }          
-    public int setIngresarUsuario(clsUsuario usuario)
+    public int setIngresarUsuario(clsConceptos usuario)
     {
         daoUsuario daousuario = new daoUsuario();
         return daousuario.ingresaUsuarios(usuario);
     }              
-    public int setModificarUsuario(clsUsuario usuario)
+    public int setModificarUsuario(clsConceptos usuario)
     {
         daoUsuario daousuario = new daoUsuario();
         return daousuario.actualizaUsuarios(usuario);
