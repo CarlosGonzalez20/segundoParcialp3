@@ -1,0 +1,71 @@
+commit 811e40288cfc136e8ea7d9ccbe56ec0b4cfb13a7
+Merge: f086e41 a18e9e8
+Author: Carlos González <97981499+CarlosGonzalez20@users.noreply.github.com>
+Date:   Mon Apr 24 14:03:20 2023 -0600
+
+    Merge pull request #2 from CarlosGonzalez20/Bitacora-9959-20-6164
+    
+    Terminado Bitacora
+
+commit f086e41223865958dc3f550f6cd8bc5aa21bf8f3
+Merge: 1dc8630 73e162d
+Author: Carlos González <97981499+CarlosGonzalez20@users.noreply.github.com>
+Date:   Mon Apr 24 14:03:02 2023 -0600
+
+    Merge pull request #1 from CarlosGonzalez20/Mantenimiet¿ntos-9959-20-6164
+    
+    Mantenimiet¿ntos 9959 20 6164
+
+commit a18e9e839fde92f4ac301e272ed6493aabd5efaa
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 13:59:35 2023 -0600
+
+    Terminado Bitacora
+
+commit 73e162dbf69135d42d523dde358a6b78b748d702
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 13:55:44 2023 -0600
+
+    forma de conceptos terminada
+
+commit aaf0434de1ece879ea8c6e9e82ba310b7cf45b65
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 13:24:54 2023 -0600
+
+    se cambiarion variables en daoConceptos
+
+commit d1552a4adf834984574bfd4776127e00548737b7
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 12:50:01 2023 -0600
+
+    cambiando nombre de variables  en clsConceptos
+
+commit c8002c0eacc0baaf674437bbc5f16723ace06f24
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 12:31:11 2023 -0600
+
+    comenzando a cambiar variables en clsConceptos
+
+commit a2df0b0362ba83a77c623dd5ca6612955dc426e6
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 12:25:41 2023 -0600
+
+    git me colocó unos cambios, los subiré igualmente
+
+commit fc2736b2fe4ab04629c8fb6952ac07bd955aaed2
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 12:23:57 2023 -0600
+
+    creando refactor de cls, dao y forma de conceptos
+
+commit 1dc863033f1009a6e1177545fdba5b164c117ca4
+Author: CarlosGonzalez20 <ll3224645@gmail.com>
+Date:   Mon Apr 24 12:21:06 2023 -0600
+
+    llenando repositorio con el proyecto
+
+commit 5aec7fdf56f04edd2fee39736c4e3644743cb86f
+Author: Carlos González <97981499+CarlosGonzalez20@users.noreply.github.com>
+Date:   Mon Apr 24 12:17:28 2023 -0600
+
+    Initial commit
