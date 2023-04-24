@@ -95,15 +95,15 @@ public class clsConceptos {
         return "clsConcepto{" + "IdConcepto=" + IdConcepto + ", nombreConcepto=" + nombreConcepto + ", descripcionConcepto=" + descripcionConcepto + ", efectoConcepto=" + efectoConcepto + ", estatusConcepto=" + estatusConcepto +'}';
     }
     //Metodos de acceso a la capa controlador
-    public clsConceptos getBuscarInformacionUsuarioPorNombre(clsConceptos concepto)
+    public clsConceptos getBuscarInformacionConceptoPorNombre(clsConceptos concepto)
     {
         daoConceptos daoconcepto = new daoConceptos();
-        return daoconcepto.consultaUsuariosPorNombre(concepto);
+        return daoconcepto.consultaConceptoPorNombre(concepto);
     }
     public clsConceptos getBuscarInformacionUsuarioPorId(clsConceptos concepto)
     {
         daoConceptos daoconcepto = new daoConceptos();
-        return daoconcepto.consultaConceptosPorId(concepto);
+        return daoconcepto.consultaConceptoPorId(concepto);
     }    
     public List<clsConceptos> getListadoConceptos()
     {

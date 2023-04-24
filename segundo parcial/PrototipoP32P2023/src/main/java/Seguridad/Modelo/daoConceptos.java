@@ -5,7 +5,7 @@
  */
 package Seguridad.Modelo;
 
-import Seguridad.Controlador.clsUsuario;
+import Seguridad.Controlador.clsConceptos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,46 +16,37 @@ import java.util.List;
  */
 public class daoConceptos {
 
-    private static final String SQL_SELECT = "SELECT usuid, usunombre, usucontrasena, usuultimasesion, usuestatus, usunombrereal, usucorreoe, usutelefono, usudireccion, tipuid FROM tbl_usuario";
-    private static final String SQL_INSERT = "INSERT INTO tbl_usuario(usunombre, usucontrasena, usuultimasesion, usuestatus, usunombrereal, usucorreoe, usutelefono, usudireccion, tipuid) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE tbl_usuario SET usunombre=?, usucontrasena=?,  usuultimasesion=?, usuestatus=?, usunombrereal=?, usucorreoe=?, usutelefono=?, usudireccion=?, tipuid=?  WHERE usuid = ?";
-    private static final String SQL_DELETE = "DELETE FROM tbl_usuario WHERE usuid=?";
-    private static final String SQL_SELECT_NOMBRE = "SELECT usuid, usunombre, usucontrasena, usuultimasesion, usuestatus, usunombrereal, usucorreoe, usutelefono, usudireccion, tipuid FROM tbl_usuario WHERE usunombre = ?";
-    private static final String SQL_SELECT_ID = "SELECT usuid, usunombre, usucontrasena, usuultimasesion, usuestatus, usunombrereal, usucorreoe, usutelefono, usudireccion, tipuid FROM tbl_usuario WHERE usuid = ?";     
+    private static final String SQL_SELECT = "SELECT concId, concNombre, concDescripcion, concEfecto, concEstatus FROM tbl_conceptos";
+    private static final String SQL_INSERT = "INSERT INTO tbl_conceptos(concId, concNombre, concDescripcion, concEfecto, concEstatus) VALUES(?, ?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE tbl_conceptos SET concNombre=?, concDescripcion=?,  concEfecto=?, concEstatus=?  WHERE concId = ?";
+    private static final String SQL_DELETE = "DELETE FROM tbl_conceptos WHERE concId=?";
+    private static final String SQL_SELECT_NOMBRE = "SELECT concId, concNombre, concDescripcion, concEfecto, concEstatus FROM tbl_conceptos WHERE concNombre = ?";
+    private static final String SQL_SELECT_ID = "SELECT concId, concNombre, concDescripcion, concEfecto, concEstatus FROM tbl_conceptos WHERE concId = ?";
+     
 
-    public List<clsUsuario> consultaUsuarios() {
+    public List<clsConceptos> consultaConcepto() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
-        List<clsUsuario> usuarios = new ArrayList<>();
+        List<clsConceptos> conceptos = new ArrayList<>();
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("usuid");
-                String nombre = rs.getString("usunombre");
-                String contrasena = rs.getString("usucontrasena");
-                String sesion = rs.getString("usuultimasesion");
-		String estatus = rs.getString("usuestatus");
-                String nombrereal= rs.getString("usunombrereal");
-                String correo= rs.getString("usucorreoe");
-                String telefono= rs.getString("usutelefono");
-		String direccion= rs.getString("usudireccion");
-		int tipoid= rs.getInt("tipuid");
-                clsUsuario usuario = new clsUsuario();
-                usuario.setIdUsuario(id);
-                usuario.setNombreUsuario(nombre);
-                usuario.setContrasenaUsuario(contrasena);
-                usuario.setUltimaSesionUsuario(sesion);
-                usuario.setEstatusUsuario(estatus);
-                usuario.setNombreRealUsuario(nombrereal);
-                usuario.setCorreoUsuario(correo); 
-                usuario.setTelefonoUsuario(telefono);
-                usuario.setDireccionUsuario(direccion);
-                usuario.setTipoUsuario(tipoid);
-                usuarios.add(usuario);
+                int id = rs.getInt("concId");
+                String nombre = rs.getString("concNombre");
+                String descripcion = rs.getString("concDescripcion");
+                String efecto = rs.getString("concEfecto");
+		String estatus = rs.getString("concEstatus");
+                clsConceptos concepto = new clsConceptos();
+                concepto.setIdConcepto(id);
+                concepto.setNombreConcepto(nombre);
+                concepto.setDescripcionConcepto(descripcion);
+                concepto.setEfectoConcepto(efecto);
+                concepto.setEstatusConcepto(estatus);
+                conceptos.add(concepto);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -64,25 +55,21 @@ public class daoConceptos {
             Conexion.close(stmt);
             Conexion.close(conn);
         }
-        return usuarios;
+        return conceptos;
     }
 
-    public int ingresaUsuarios(clsUsuario usuario) {
+    public int ingresaConcepto(clsConceptos concepto) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, usuario.getNombreUsuario());
-            stmt.setString(2, usuario.getContrasenaUsuario());
-            stmt.setString(3, usuario.getUltimaSesionUsuario());
-	    stmt.setString(4, usuario.getEstatusUsuario());
-            stmt.setString(5, usuario.getNombreRealUsuario());
-            stmt.setString(6, usuario.getCorreoUsuario());
-            stmt.setString(7, usuario.getTelefonoUsuario());
-            stmt.setString(8, usuario.getDireccionUsuario());
-            stmt.setInt(9, usuario.getTipoUsuario());
+            stmt.setInt(1, concepto.getIdConcepto());
+            stmt.setString(2, concepto.getNombreConcepto());
+            stmt.setString(3, concepto.getDescripcionConcepto());
+            stmt.setString(4, concepto.getEfectoConcepto());
+	    stmt.setString(5, concepto.getEstatusConcepto());
             System.out.println("ejecutando query:" + SQL_INSERT);
             rows = stmt.executeUpdate();
             System.out.println("Registros afectados:" + rows);
@@ -96,7 +83,7 @@ public class daoConceptos {
         return rows;
     }
 
-    public int actualizaUsuarios(clsUsuario usuario) {
+    public int actualizaConcepto(clsConceptos concepto) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
@@ -104,16 +91,11 @@ public class daoConceptos {
             conn = Conexion.getConnection();
             System.out.println("ejecutando query: " + SQL_UPDATE);
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, usuario.getNombreUsuario());
-            stmt.setString(2, usuario.getContrasenaUsuario());
-            stmt.setString(3, usuario.getUltimaSesionUsuario());
-	    stmt.setString(4, usuario.getEstatusUsuario());
-            stmt.setString(5, usuario.getNombreRealUsuario());
-            stmt.setString(6, usuario.getCorreoUsuario());
-            stmt.setString(7, usuario.getTelefonoUsuario());
-            stmt.setString(8, usuario.getDireccionUsuario());
-            stmt.setInt(9, usuario.getTipoUsuario());
-            stmt.setInt(10, usuario.getIdUsuario());
+            stmt.setString(1, concepto.getNombreConcepto());
+            stmt.setString(2, concepto.getDescripcionConcepto());
+            stmt.setString(3, concepto.getEfectoConcepto());
+	    stmt.setString(4, concepto.getEstatusConcepto());
+            stmt.setInt(5, concepto.getIdConcepto());
             
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
@@ -128,7 +110,7 @@ public class daoConceptos {
         return rows;
     }
 
-    public int borrarUsuarios(clsUsuario usuario) {
+    public int borrarConcepto(clsConceptos concepto) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
@@ -137,7 +119,7 @@ public class daoConceptos {
             conn = Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_DELETE);
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setInt(1, usuario.getIdUsuario());
+            stmt.setInt(1, concepto.getIdConcepto());
             rows = stmt.executeUpdate();
             System.out.println("Registros eliminados:" + rows);
         } catch (SQLException ex) {
@@ -150,40 +132,30 @@ public class daoConceptos {
         return rows;
     }
 
-    public clsUsuario consultaUsuariosPorNombre(clsUsuario usuario) {
+    public clsConceptos consultaConceptoPorNombre(clsConceptos concepto) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             conn = Conexion.getConnection();
-            System.out.println("Ejecutando query:" + SQL_SELECT_NOMBRE + " objeto recibido: " + usuario);
+            System.out.println("Ejecutando query:" + SQL_SELECT_NOMBRE + " objeto recibido: " + concepto);
             stmt = conn.prepareStatement(SQL_SELECT_NOMBRE);
             //stmt.setInt(1, usuario.getIdUsuario());            
-            stmt.setString(1, usuario.getNombreUsuario());
+            stmt.setString(1, concepto.getNombreConcepto());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("usuid");
-                String nombre = rs.getString("usunombre");
-                String contrasena = rs.getString("usucontrasena");
-                String sesion = rs.getString("usuultimasesion");
-		String estatus = rs.getString("usuestatus");
-                String nombrereal= rs.getString("usunombrereal");
-		String correo= rs.getString("usucorreoe");
-		String telefono= rs.getString("usutelefono");
-		String direccion= rs.getString("usudireccion");
-		int tipoid= rs.getInt("tipuid");
+                int id = rs.getInt("concId");
+                String nombre = rs.getString("concNombre");
+                String descripcion = rs.getString("concDescripcion");
+                String efecto = rs.getString("concEfecto");
+		String estatus = rs.getString("concEstatus");
                 //usuario = new clsUsuario();
-                usuario.setIdUsuario(id);
-                usuario.setNombreUsuario(nombre);
-                usuario.setContrasenaUsuario(contrasena);
-                usuario.setUltimaSesionUsuario(sesion);
-                usuario.setEstatusUsuario(estatus);
-                usuario.setNombreRealUsuario(nombrereal);
-                usuario.setCorreoUsuario(correo); 
-                usuario.setTelefonoUsuario(telefono);
-		usuario.setDireccionUsuario(direccion);
-                usuario.setTipoUsuario(tipoid);
-                System.out.println(" registro consultado: " + usuario);                
+                concepto.setIdConcepto(id);
+                concepto.setNombreConcepto(nombre);
+                concepto.setDescripcionConcepto(descripcion);
+                concepto.setEfectoConcepto(efecto);
+                concepto.setEstatusConcepto(estatus);
+                System.out.println(" registro consultado: " + concepto);                
             }
             //System.out.println("Registros buscado:" + persona);
         } catch (SQLException ex) {
@@ -195,43 +167,32 @@ public class daoConceptos {
         }
 
         //return personas;  // Si se utiliza un ArrayList
-        return usuario;
+        return concepto;
     }
-    public clsUsuario consultaUsuariosPorId(clsUsuario usuario) {
+    public clsConceptos consultaConceptoPorId(clsConceptos concepto) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             conn = Conexion.getConnection();
-            System.out.println("Ejecutando query:" + SQL_SELECT_NOMBRE + " objeto recibido: " + usuario);
+            System.out.println("Ejecutando query:" + SQL_SELECT_NOMBRE + " objeto recibido: " + concepto);
             stmt = conn.prepareStatement(SQL_SELECT_ID);
-            stmt.setInt(1, usuario.getIdUsuario());            
+            stmt.setInt(1, concepto.getIdConcepto());            
             //stmt.setString(1, usuario.getNombreUsuario());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("usuid");
-                String nombre = rs.getString("usunombre");
-                String contrasena = rs.getString("usucontrasena");
-                String sesion = rs.getString("usuultimasesion");
-		String estatus = rs.getString("usuestatus");
-                String nombrereal= rs.getString("usunombrereal");
-		String correo= rs.getString("usucorreoe");
-		String telefono= rs.getString("usutelefono");
-		String direccion= rs.getString("usudireccion");
-		int tipoid= rs.getInt("tipuid");
+                int id = rs.getInt("concId");
+                String nombre = rs.getString("concNombre");
+                String descripcion = rs.getString("concDescripcion");
+                String efecto = rs.getString("concEfecto");
+		String estatus = rs.getString("concEstatus");
                 //usuario = new clsUsuario();
-                usuario.setIdUsuario(id);
-                usuario.setNombreUsuario(nombre);
-                usuario.setContrasenaUsuario(contrasena);
-                usuario.setUltimaSesionUsuario(sesion);
-                usuario.setEstatusUsuario(estatus);
-                usuario.setEstatusUsuario(estatus);
-                usuario.setNombreRealUsuario(nombrereal);
-                usuario.setCorreoUsuario(correo); 
-                usuario.setTelefonoUsuario(telefono);
-		usuario.setDireccionUsuario(direccion);
-                usuario.setTipoUsuario(tipoid);
-                System.out.println(" registro consultado: " + usuario);                
+                concepto.setIdConcepto(id);
+                concepto.setNombreConcepto(nombre);
+                concepto.setDescripcionConcepto(descripcion);
+                concepto.setEfectoConcepto(efecto);
+                concepto.setEstatusConcepto(estatus);
+                System.out.println(" registro consultado: " + concepto);                
             }
             //System.out.println("Registros buscado:" + persona);
         } catch (SQLException ex) {
@@ -243,6 +204,6 @@ public class daoConceptos {
         }
 
         //return personas;  // Si se utiliza un ArrayList
-        return usuario;
+        return concepto;
     }    
 }
