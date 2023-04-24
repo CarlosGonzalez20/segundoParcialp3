@@ -100,7 +100,7 @@ public class clsConceptos {
         daoConceptos daoconcepto = new daoConceptos();
         return daoconcepto.consultaConceptoPorNombre(concepto);
     }
-    public clsConceptos getBuscarInformacionUsuarioPorId(clsConceptos concepto)
+    public clsConceptos getBuscarInformacionConceptoPorId(clsConceptos concepto)
     {
         daoConceptos daoconcepto = new daoConceptos();
         return daoconcepto.consultaConceptoPorId(concepto);
