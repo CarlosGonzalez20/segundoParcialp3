@@ -5,22 +5,17 @@
  */
 package Seguridad.Controlador;
 import java.util.List;
-import Seguridad.Modelo.daoUsuario;
+import Seguridad.Modelo.daoConceptos;
 /**
  *
  * @author visitante
  */
 public class clsConceptos {
-    private int IdUsuario;
-    private String NombreUsuario;
-    private String ContrasenaUsuario;
-    private String UltimaSesionUsuario;
-    private String EstatusUsuario;
-    private String NombreRealUsuario;
-    private String CorreoUsuario;
-    private String TelefonoUsuario;
-    private String DireccionUsuario;
-    private int TipoUsuario;
+    private int IdConcepto;
+    private String nombreConcepto;
+    private String descripcionConcepto;
+    private String efectoConcepto;
+    private String estatusConcepto;
 
     public clsConceptos() {
     }
