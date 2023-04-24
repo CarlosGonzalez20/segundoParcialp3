@@ -20,193 +20,110 @@ public class clsConceptos {
     public clsConceptos() {
     }
 
-    public clsConceptos(int IdUsuario) {
-        this.IdUsuario = IdUsuario;
+    public clsConceptos(int IdConcepto) {
+        this.IdConcepto = IdConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
+    public clsConceptos(int IdConcepto, String nombreConcepto) {
+        this.IdConcepto = IdConcepto;
+        this.nombreConcepto = nombreConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
+    public clsConceptos(int IdConcepto, String nombreConcepto, String descripcionConcepto) {
+        this.IdConcepto = IdConcepto;
+        this.nombreConcepto = nombreConcepto;
+        this.descripcionConcepto = descripcionConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
+    public clsConceptos(int IdConcepto, String nombreConcepto, String descripcionConcepto, String efectoConcepto) {
+        this.IdConcepto = IdConcepto;
+        this.nombreConcepto = nombreConcepto;
+        this.descripcionConcepto = descripcionConcepto;
+        this.efectoConcepto = efectoConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-        this.EstatusUsuario = EstatusUsuario;
+    public clsConceptos(int IdConcepto, String nombreConcepto, String descripcionConcepto, String efectoConcepto, String estatusConcepto) {
+        this.IdConcepto = IdConcepto;
+        this.nombreConcepto = nombreConcepto;
+        this.descripcionConcepto = descripcionConcepto;
+        this.efectoConcepto = efectoConcepto;
+        this.estatusConcepto = estatusConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-        this.EstatusUsuario = EstatusUsuario;
-        this.NombreRealUsuario = NombreRealUsuario;
+    public int getIdConcepto() {
+        return IdConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-        this.EstatusUsuario = EstatusUsuario;
-        this.NombreRealUsuario = NombreRealUsuario;
-        this.CorreoUsuario = CorreoUsuario;
+    public void setIdConcepto(int IdConcepto) {
+        this.IdConcepto = IdConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-        this.EstatusUsuario = EstatusUsuario;
-        this.NombreRealUsuario = NombreRealUsuario;
-        this.CorreoUsuario = CorreoUsuario;
-        this.TelefonoUsuario = TelefonoUsuario;
+    public String getNombreConcepto() {
+        return nombreConcepto;
     }
 
-    public clsConceptos(int IdUsuario, String NombreUsuario, String ContrasenaUsuario, String UltimaSesionUsuario, String EstatusUsuario, String NombreRealUsuario, String CorreoUsuario, String TelefonoUsuario, String DireccionUsuario, int TipoUsuario) {
-        this.IdUsuario = IdUsuario;
-        this.NombreUsuario = NombreUsuario;
-        this.ContrasenaUsuario = ContrasenaUsuario;
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-        this.EstatusUsuario = EstatusUsuario;
-        this.NombreRealUsuario = NombreRealUsuario;
-        this.CorreoUsuario = CorreoUsuario;
-        this.TelefonoUsuario = TelefonoUsuario;
-        this.DireccionUsuario = DireccionUsuario;
-        this.TipoUsuario = TipoUsuario;
+    public void setNombreConcepto(String nombreConcepto) {
+        this.nombreConcepto = nombreConcepto;
     }
 
-    public int getIdUsuario() {
-        return IdUsuario;
+    public String getDescripcionConcepto() {
+        return descripcionConcepto;
     }
 
-    public void setIdUsuario(int IdUsuario) {
-        this.IdUsuario = IdUsuario;
+    public void setDescripcionConcepto(String descripcionConcepto) {
+        this.descripcionConcepto = descripcionConcepto;
     }
 
-    public String getNombreUsuario() {
-        return NombreUsuario;
+    public String getEfectoConcepto() {
+        return efectoConcepto;
     }
 
-    public void setNombreUsuario(String NombreUsuario) {
-        this.NombreUsuario = NombreUsuario;
+    public void setEfectoConcepto(String efectoConcepto) {
+        this.efectoConcepto = efectoConcepto;
     }
 
-    public String getContrasenaUsuario() {
-        return ContrasenaUsuario;
+    public String getEstatusConcepto() {
+        return estatusConcepto;
     }
 
-    public void setContrasenaUsuario(String ContrasenaUsuario) {
-        this.ContrasenaUsuario = ContrasenaUsuario;
+    public void setEstatusConcepto(String estatusConcepto) {
+        this.estatusConcepto = estatusConcepto;
     }
 
-    public String getUltimaSesionUsuario() {
-        return UltimaSesionUsuario;
-    }
-
-    public void setUltimaSesionUsuario(String UltimaSesionUsuario) {
-        this.UltimaSesionUsuario = UltimaSesionUsuario;
-    }
-
-    public String getEstatusUsuario() {
-        return EstatusUsuario;
-    }
-
-    public void setEstatusUsuario(String EstatusUsuario) {
-        this.EstatusUsuario = EstatusUsuario;
-    }
-
-    public String getNombreRealUsuario() {
-        return NombreRealUsuario;
-    }
-
-    public void setNombreRealUsuario(String NombreRealUsuario) {
-        this.NombreRealUsuario = NombreRealUsuario;
-    }
-
-    public String getCorreoUsuario() {
-        return CorreoUsuario;
-    }
-
-    public void setCorreoUsuario(String CorreoUsuario) {
-        this.CorreoUsuario = CorreoUsuario;
-    }
-
-    public String getTelefonoUsuario() {
-        return TelefonoUsuario;
-    }
-
-    public void setTelefonoUsuario(String TelefonoUsuario) {
-        this.TelefonoUsuario = TelefonoUsuario;
-    }
-
-    public String getDireccionUsuario() {
-        return DireccionUsuario;
-    }
-
-    public void setDireccionUsuario(String DireccionUsuario) {
-        this.DireccionUsuario = DireccionUsuario;
-    }
-    
-    public int getTipoUsuario() {
-        return TipoUsuario;
-    }
-
-    public void setTipoUsuario(int TipoUsuario) {
-        this.TipoUsuario = TipoUsuario;
-    }
-    
     @Override
     public String toString() {
-        return "clsUsuario{" + "IdUsuario=" + IdUsuario + ", NombreUsuario=" + NombreUsuario + ", ContrasenaUsuario=" + ContrasenaUsuario + ", UltimaSesionUsuario=" + UltimaSesionUsuario + ", EstatusUsuario=" + EstatusUsuario + ", NombreRealUsuario=" + NombreRealUsuario + ", CorreoUsuario=" + CorreoUsuario + ", TelefonoUsuario=" + TelefonoUsuario + ", DireccionUsuario=" + DireccionUsuario + ", TipoUsuario=" + TipoUsuario +'}';
+        return "clsConcepto{" + "IdConcepto=" + IdConcepto + ", nombreConcepto=" + nombreConcepto + ", descripcionConcepto=" + descripcionConcepto + ", efectoConcepto=" + efectoConcepto + ", estatusConcepto=" + estatusConcepto +'}';
     }
     //Metodos de acceso a la capa controlador
-    public clsConceptos getBuscarInformacionUsuarioPorNombre(clsConceptos usuario)
+    public clsConceptos getBuscarInformacionUsuarioPorNombre(clsConceptos concepto)
     {
-        daoUsuario daousuario = new daoUsuario();
-        return daousuario.consultaUsuariosPorNombre(usuario);
+        daoConceptos daoconcepto = new daoConceptos();
+        return daoconcepto.consultaUsuariosPorNombre(concepto);
     }
-    public clsConceptos getBuscarInformacionUsuarioPorId(clsConceptos usuario)
+    public clsConceptos getBuscarInformacionUsuarioPorId(clsConceptos concepto)
     {
-        daoUsuario daousuario = new daoUsuario();
-        return daousuario.consultaUsuariosPorId(usuario);
+        daoConceptos daoconcepto = new daoConceptos();
+        return daoconcepto.consultaConceptosPorId(concepto);
     }    
-    public List<clsConceptos> getListadoUsuarios()
+    public List<clsConceptos> getListadoConceptos()
     {
-        daoUsuario daousuario = new daoUsuario();
-        List<clsConceptos> listadoUsuarios = daousuario.consultaUsuarios();
-        return listadoUsuarios;
+        daoConceptos daoconcepto = new daoConceptos();
+        List<clsConceptos> listadoClsConceptos = daoconcepto.consultaConcepto();
+        return listadoClsConceptos;
     }
-    public int setBorrarUsuario(clsConceptos usuario)
+    public int setBorrarConcepto(clsConceptos concepto)
     {
-        daoUsuario daousuario = new daoUsuario();
-        return daousuario.borrarUsuarios(usuario);
+        daoConceptos daoconcepto = new daoConceptos();
+        return daoconcepto.borrarConcepto(concepto);
     }          
-    public int setIngresarUsuario(clsConceptos usuario)
+    public int setIngresarConcepto(clsConceptos concepto)
     {
-        daoUsuario daousuario = new daoUsuario();
-        return daousuario.ingresaUsuarios(usuario);
+        daoConceptos daoconcepto = new daoConceptos();
+        return daoconcepto.ingresaConcepto(concepto);
     }              
-    public int setModificarUsuario(clsConceptos usuario)
+    public int setModificarConcepto(clsConceptos concepto)
     {
-        daoUsuario daousuario = new daoUsuario();
-        return daousuario.actualizaUsuarios(usuario);
+        daoConceptos daoconcepto = new daoConceptos();
+        return daoconcepto.actualizaConcepto(concepto);
     }              
 }
